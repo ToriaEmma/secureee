@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CCIN - Construction & Contrôle</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #fff1dc;
+        background: #fff;
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        overflow: hidden;
+        min-height: 100vh;
+        padding: 40px 48px;
+        background-image: url("WhatsApp Image 2026-06-29 at 10.41.06.jpeg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.36);
+        z-index: 0;
+      }
+
+      .hero > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .page-wipe {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 120%;
+        background: #fff;
+        border-radius: 48px 48px 0 0;
+        transform: translateY(105%);
+        transform-origin: bottom center;
+        z-index: 2;
+        pointer-events: none;
+        will-change: transform;
+      }
+
+      .wipe-accent {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: min(360px, 46vw);
+        height: 8px;
+        background: #ea9b49;
+        border-radius: 999px;
+        transform: translate(-50%, -22px) scaleX(0.28);
+        transform-origin: center;
+        opacity: 0;
+      }
+
+      .nav {
+        position: absolute;
+        top: 16px;
+        right: 136px;
+        left: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 10px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .logo {
+        display: block;
+        width: 150px;
+        height: auto;
+      }
+
+      .logo-wrap {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .nav a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .side-label {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 86px;
+        height: 220px;
+        background: #ea9b49;
+        color: #142b41;
+        font-family: "Aero", "Aero 03", "Arial Black", Arial, Helvetica, sans-serif;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        writing-mode: vertical-rl;
+      }
+
+      .side-label::before {
+        content: "";
+        width: 11px;
+        height: 11px;
+        margin-bottom: 16px;
+        border-radius: 999px;
+        background: #142b41;
+      }
+
+      .eyebrow {
+        position: absolute;
+        top: 60px;
+        left: 29%;
+        margin: 0;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .main-copy {
+        position: absolute;
+        right: 7%;
+        bottom: 42%;
+        max-width: 520px;
+        margin: 0;
+        font-size: clamp(17px, 1.55vw, 27px);
+        font-weight: 900;
+        line-height: 1.22;
+      }
+
+      .info-card {
+        position: absolute;
+        left: 48px;
+        bottom: 56px;
+        width: 260px;
+        min-height: 205px;
+        padding: 20px 22px 18px;
+        background: rgba(185, 145, 105, 0.72);
+        border: 1px solid rgba(255, 241, 220, 0.14);
+      }
+
+      .info-card h2 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.12;
+        text-transform: uppercase;
+      }
+
+      .divider {
+        display: block;
+        width: 100%;
+        margin: 24px 0 14px;
+        border-top: 2px dotted rgba(255, 241, 220, 0.8);
+      }
+
+      .info-card p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 900;
+        line-height: 1.35;
+        text-align: right;
+      }
+
+      .scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 34px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        transform: translateX(-50%);
+        font-size: 16px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .scroll-icon {
+        display: grid;
+        place-items: center;
+        width: 36px;
+        height: 36px;
+        border: 2px dotted rgba(255, 241, 220, 0.8);
+        border-radius: 999px;
+        font-size: 18px;
+      }
+
+      .next-section {
+        min-height: 100vh;
+        padding: 104px 48px;
+        background: #fff;
+        color: #142b41;
+      }
+
+      .next-section-inner {
+        width: min(1040px, 100%);
+        margin: 0 auto;
+      }
+
+      .next-section h2 {
+        max-width: 760px;
+        margin: 0 0 24px;
+        color: #142b41;
+        font-size: clamp(36px, 6vw, 78px);
+        font-weight: 900;
+        line-height: 0.96;
+        text-transform: uppercase;
+      }
+
+      .next-section p {
+        max-width: 600px;
+        margin: 0;
+        color: #32485b;
+        font-size: clamp(18px, 2vw, 24px);
+        font-weight: 700;
+        line-height: 1.42;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          padding: 28px 22px;
+        }
+
+        .nav {
+          right: 22px;
+          left: 22px;
+          gap: 16px;
+          align-items: flex-start;
+          font-size: 10px;
+        }
+
+        .side-label {
+          width: 58px;
+          height: 190px;
+          font-size: 9px;
+        }
+
+        .logo {
+          width: 110px;
+        }
+
+        .nav-links {
+          max-width: calc(100% - 128px);
+          gap: 10px 14px;
+        }
+
+        .eyebrow {
+          top: 86px;
+          left: 22px;
+          font-size: 16px;
+        }
+
+        .main-copy {
+          right: 22px;
+          bottom: 310px;
+          left: 22px;
+          max-width: none;
+          font-size: 28px;
+        }
+
+        .info-card {
+          right: 22px;
+          bottom: 76px;
+          left: 22px;
+          width: auto;
+          min-height: 230px;
+          padding: 28px 24px;
+        }
+
+        .info-card h2 {
+          font-size: 25px;
+        }
+
+        .divider {
+          margin: 42px 0 20px;
+        }
+
+        .info-card p {
+          font-size: 18px;
+        }
+
+        .scroll {
+          display: none;
+        }
+
+        .next-section {
+          padding: 82px 22px;
+        }
+
+        .page-wipe {
+          border-radius: 32px 32px 0 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .nav {
+          flex-direction: column;
+        }
+
+        .nav-links {
+          max-width: 100%;
+          justify-content: flex-start;
+        }
+
+        .side-label {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="page-wipe" aria-hidden="true">
+        <span class="wipe-accent"></span>
+      </div>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a class="logo-wrap" href="https://ccin-web.vercel.app/" aria-label="JCIN Logo">
+          <img class="logo" src="Logo blanc.png" alt="JCIN Logo">
+        </a>
+        <div class="nav-links">
+          <a href="https://ccin-web.vercel.app/">Accueil</a>
+          <a href="https://ccin-web.vercel.app/about">À propos</a>
+          <a href="https://ccin-web.vercel.app/services">Services</a>
+          <a href="https://ccin-web.vercel.app/projects">Réalisations</a>
+          <a href="https://ccin-web.vercel.app/contact">Contact</a>
+        </div>
+      </nav>
+
+      <aside class="side-label">Construction & contrôle</aside>
+
+      <p class="main-copy">
+        Leader en construction & contrôle
+      </p>
+
+      <section class="info-card" aria-label="Informations">
+        <h2>Bâtir l'excellence<br>sans compromis</h2>
+        <span class="divider"></span>
+        <p>CCIN transforme vos visions en infrastructures durables. Une expertise technique de pointe pour des projets qui défient le temps.</p>
+      </section>
+
+      <div class="scroll" aria-hidden="true">
+        <span class="scroll-icon">⌄</span>
+        <span>Des infrastructures neuves</span>
+      </div>
+
+    </main>
+    <section class="next-section" aria-label="Section suivante">
+      <div class="next-section-inner">
+        <h2>Des infrastructures neuves, durables et maîtrisées.</h2>
+        <p>CCIN accompagne vos projets de construction et de contrôle avec rigueur, expertise technique et exigence de qualité.</p>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: ".hero",
+          start: "top top",
+          end: "+=115%",
+          scrub: true,
+          pin: true
+        }
+      })
+      .fromTo(".page-wipe", {
+        yPercent: 105,
+        scaleX: 0.96
+      }, {
+        yPercent: 0,
+        scaleX: 1,
+        ease: "power2.out",
+        duration: 0.82
+      })
+      .fromTo(".wipe-accent", {
+        opacity: 1,
+        scaleX: 0.28
+      }, {
+        opacity: 0,
+        scaleX: 1,
+        ease: "power1.out",
+        duration: 0.34
+      }, 0.08);
+    </script>
+  </body>
+</html>
