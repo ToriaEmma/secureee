@@ -39,7 +39,7 @@
 
       .wrap {
         display: grid;
-        grid-template-columns: repeat(14, 393px);
+        grid-template-columns: repeat(16, 393px);
         gap: 34px;
         align-items: start;
         justify-content: center;
@@ -1209,6 +1209,269 @@
 
       .teacher-nav .nav.active {
         color: var(--pink);
+      }
+
+      .parent-dashboard {
+        padding: 27px 24px 92px;
+      }
+
+      .parent-header {
+        display: grid;
+        grid-template-columns: 62px 1fr 48px;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .parent-avatar {
+        display: grid;
+        place-items: center;
+        width: 58px;
+        height: 58px;
+        border-radius: 999px;
+        background: #ffd8e9;
+        font-size: 42px;
+      }
+
+      .parent-greeting {
+        margin: 0 0 4px;
+        color: #2b2630;
+        font-size: 20px;
+        line-height: 1;
+        font-weight: 650;
+      }
+
+      .parent-name {
+        margin: 0;
+        font-size: 20px;
+        line-height: 1.08;
+        font-weight: 900;
+      }
+
+      .parent-bell {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #fff;
+        font-size: 24px;
+        box-shadow: 0 7px 16px rgba(70, 43, 88, 0.05);
+      }
+
+      .parent-bell span {
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        display: grid;
+        place-items: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--pink);
+        border: 2px solid #fff;
+        font-size: 10px;
+        font-weight: 900;
+      }
+
+      .parent-overview {
+        margin: 29px 0 13px;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .parent-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .parent-stat {
+        display: grid;
+        grid-template-columns: 47px 1fr;
+        gap: 10px;
+        align-items: center;
+        min-height: 83px;
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        box-shadow: 0 8px 18px rgba(70, 43, 88, 0.04);
+      }
+
+      .parent-stat.purple {
+        background: #f4eaff;
+      }
+
+      .parent-stat.green {
+        background: #effbe8;
+      }
+
+      .parent-stat.yellow {
+        background: #fff6e7;
+      }
+
+      .parent-stat.blue {
+        background: #f0f7ff;
+      }
+
+      .parent-stat-icon {
+        display: grid;
+        place-items: center;
+        width: 43px;
+        height: 43px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.55);
+        font-size: 27px;
+      }
+
+      .parent-stat-main {
+        margin: 0 0 5px;
+        font-size: 21px;
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .parent-stat-main.green-text {
+        color: #3ba545;
+        font-size: 17px;
+      }
+
+      .parent-stat-label {
+        margin: 0;
+        color: #504956;
+        font-size: 12px;
+        line-height: 1.28;
+        font-weight: 650;
+      }
+
+      .parent-average {
+        display: grid;
+        grid-template-columns: 54px 1fr 30px;
+        gap: 12px;
+        align-items: center;
+        min-height: 88px;
+        margin-top: 13px;
+        padding: 16px;
+        border: 1px solid #ffd9ea;
+        border-radius: 10px;
+        background: #fff0f7;
+        box-shadow: 0 8px 18px rgba(70, 43, 88, 0.04);
+      }
+
+      .parent-average .parent-stat-icon {
+        color: var(--pink);
+        background: #ffe0ee;
+      }
+
+      .parent-average strong {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 22px;
+        line-height: 1;
+        font-weight: 900;
+      }
+
+      .parent-average p {
+        margin: 0;
+        color: #504956;
+        font-size: 12px;
+        line-height: 1.28;
+        font-weight: 650;
+      }
+
+      .trend-arrow {
+        color: #45b84f;
+        font-size: 28px;
+        font-weight: 900;
+      }
+
+      .parent-kids {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 12px 0 22px;
+      }
+
+      .parent-kid {
+        display: grid;
+        justify-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .parent-kid .child-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 39px;
+      }
+
+      .parent-session {
+        padding: 15px 17px 16px;
+        border: 1px solid #ecdff5;
+        border-radius: 10px;
+        background: #fbf4ff;
+        box-shadow: 0 8px 18px rgba(70, 43, 88, 0.05);
+      }
+
+      .parent-session-title {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        margin: 0 0 12px;
+        font-size: 15px;
+        font-weight: 900;
+      }
+
+      .parent-session-title span {
+        color: #8f54d0;
+        font-size: 21px;
+      }
+
+      .parent-session-inner {
+        display: grid;
+        grid-template-columns: 38px 1fr 80px;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 13px;
+        border-radius: 10px;
+        background: #fff;
+      }
+
+      .mini-avatar {
+        display: grid;
+        place-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        background: #ffd8e9;
+        font-size: 22px;
+      }
+
+      .session-name {
+        margin: 0 0 5px;
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .session-time {
+        margin: 0;
+        color: #504956;
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .details-button {
+        display: grid;
+        place-items: center;
+        height: 39px;
+        border-radius: 10px;
+        color: #6f48a7;
+        background: #f1e8ff;
+        font-size: 13px;
+        font-weight: 900;
       }
 
       .slots-screen {
@@ -3950,6 +4213,178 @@
         </section>
 
         <div class="caption"><span class="number">5</span>Suivi de l'enfant</div>
+      </article>
+
+      <article class="mockup">
+        <section class="phone">
+          <div class="screen children-screen">
+            <header class="detail-topbar">
+              <span class="round-btn">‹</span>
+              <h1 class="page-title">Mes enfants</h1>
+              <span class="round-btn">＋</span>
+            </header>
+
+            <p class="children-count">3 enfants</p>
+
+            <section class="children-list">
+              <article class="child-card">
+                <div class="child-top">
+                  <div class="child-avatar">👧</div>
+                  <div>
+                    <p class="child-name">Lina A.</p>
+                    <p class="child-meta">CM2 • 10 ans</p>
+                  </div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="child-progress-head"><span>Progression</span><span class="percent purple">84%</span></div>
+                <div class="child-track"><span class="child-fill purple"></span></div>
+                <p class="strengths">Points forts : Maths, Français</p>
+              </article>
+
+              <article class="child-card">
+                <div class="child-top">
+                  <div class="child-avatar green">👦</div>
+                  <div>
+                    <p class="child-name">Yanis A.</p>
+                    <p class="child-meta">6e • 11 ans</p>
+                  </div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="child-progress-head"><span>Progression</span><span class="percent green">76%</span></div>
+                <div class="child-track"><span class="child-fill green"></span></div>
+                <p class="strengths">Points forts : SVT, Anglais</p>
+              </article>
+
+              <article class="child-card">
+                <div class="child-top">
+                  <div class="child-avatar orange">👧</div>
+                  <div>
+                    <p class="child-name">Aminata A.</p>
+                    <p class="child-meta">CE2 • 8 ans</p>
+                  </div>
+                  <span class="chevron">›</span>
+                </div>
+                <div class="child-progress-head"><span>Progression</span><span class="percent orange">61%</span></div>
+                <div class="child-track"><span class="child-fill orange"></span></div>
+                <p class="strengths">Points forts : Lecture, Maths</p>
+              </article>
+            </section>
+
+            <div class="add-child">＋ Ajouter un enfant</div>
+          </div>
+
+          <nav class="bottom" aria-label="Navigation">
+            <span class="nav"><span class="nav-ico">⌂</span>Accueil</span>
+            <span class="nav active"><span class="nav-ico">♧</span>Enfants</span>
+            <span class="nav"><span class="plus">+</span></span>
+            <span class="nav"><span class="nav-ico">▣</span>Messages</span>
+            <span class="nav"><span class="nav-ico">♙</span>Profil</span>
+          </nav>
+        </section>
+
+        <div class="caption"><span class="number">2</span>Mes enfants</div>
+      </article>
+
+      <article class="mockup">
+        <section class="phone">
+          <div class="screen parent-dashboard">
+            <header class="parent-header">
+              <div class="parent-avatar">👩🏾</div>
+              <div>
+                <p class="parent-greeting">Bonjour</p>
+                <h1 class="parent-name">Maman Aicha 👋</h1>
+              </div>
+              <div class="parent-bell">🔔<span>3</span></div>
+            </header>
+
+            <h2 class="parent-overview">Aperçu aujourd'hui</h2>
+
+            <section class="parent-grid">
+              <article class="parent-stat purple">
+                <span class="parent-stat-icon">♟</span>
+                <div>
+                  <p class="parent-stat-main">3</p>
+                  <p class="parent-stat-label">enfants<br>Gérés</p>
+                </div>
+              </article>
+
+              <article class="parent-stat green">
+                <span class="parent-stat-icon">♛</span>
+                <div>
+                  <p class="parent-stat-main green-text">Premium</p>
+                  <p class="parent-stat-label">Abonnement<br>actif</p>
+                </div>
+              </article>
+
+              <article class="parent-stat yellow">
+                <span class="parent-stat-icon">◷</span>
+                <div>
+                  <p class="parent-stat-main">1h 35 min</p>
+                  <p class="parent-stat-label">Temps de travail<br>aujourd'hui</p>
+                </div>
+              </article>
+
+              <article class="parent-stat blue">
+                <span class="parent-stat-icon">☑</span>
+                <div>
+                  <p class="parent-stat-main">4</p>
+                  <p class="parent-stat-label">Devoirs<br>terminés</p>
+                </div>
+              </article>
+            </section>
+
+            <section class="parent-average">
+              <span class="parent-stat-icon">▟</span>
+              <div>
+                <strong>82%</strong>
+                <p>Progression moyenne<br>de la semaine</p>
+              </div>
+              <span class="trend-arrow">↗</span>
+            </section>
+
+            <div class="section-heading">
+              <span>Mes enfants</span>
+              <span class="see-all">Voir tout</span>
+            </div>
+
+            <section class="parent-kids">
+              <div class="parent-kid">
+                <span class="child-avatar">👧</span>
+                <span>Lina</span>
+              </div>
+              <div class="parent-kid">
+                <span class="child-avatar green">👦</span>
+                <span>Yanis</span>
+              </div>
+              <div class="parent-kid">
+                <span class="child-avatar orange">👧</span>
+                <span>Aminata</span>
+              </div>
+            </section>
+
+            <section class="parent-session">
+              <h2 class="parent-session-title"><span>▣</span>Prochaine séance</h2>
+              <div class="parent-session-inner">
+                <span class="mini-avatar">👧</span>
+                <div>
+                  <p class="session-name">Lina • Maths</p>
+                  <p class="session-time">Aujourd'hui à 16:00</p>
+                </div>
+                <span class="details-button">Détails</span>
+              </div>
+            </section>
+          </div>
+
+          <nav class="bottom" aria-label="Navigation">
+            <span class="nav active"><span class="nav-ico">⌂</span>Accueil</span>
+            <span class="nav"><span class="nav-ico">♧</span>Enfants</span>
+            <span class="nav"><span class="plus">+</span></span>
+            <span class="nav"><span class="nav-ico">▣</span>Messages</span>
+            <span class="nav"><span class="nav-ico">♙</span>Profil</span>
+          </nav>
+        </section>
+
+        <div class="caption"><span class="number">1</span>Tableau de bord</div>
       </article>
     </main>
   </body>
